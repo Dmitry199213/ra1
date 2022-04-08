@@ -6,7 +6,6 @@ from forms.user import RegisterForm
 from forms.login import LoginForm
 from forms.news import NewsForm
 from flask_login import LoginManager, login_user, login_required, current_user, logout_user
-import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -158,8 +157,7 @@ def main():
     db_sess.add(news)
     db_sess.commit()
     '''
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run()
 
 
 if __name__ == '__main__':
